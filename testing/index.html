@@ -62,9 +62,9 @@
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             container.className = "unity-mobile";
 
-            let pr = window.devicePixelRatio / 2; //this is totally new
+            //let pr = window.devicePixelRatio / 2; //this is totally new
 
-            config.devicePixelRatio = pr; //default is 1, but that is too low for most devices/browsers
+          config.devicePixelRatio = 2;  //2 is double the default   // pr; //default is 1, but that is too low for most devices/browsers
       }
       
       loadingCover.style.display = "";
