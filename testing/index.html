@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
@@ -23,17 +23,17 @@
     </div>
     <div id="unity-fullscreen-button" style="display: none;"></div>
     <script>
-      const hideFullScreenButton = "0";
+      const hideFullScreenButton = "";
       const buildUrl = "Build";
-      const loaderUrl = buildUrl + "/0.9.loader.js";
+      const loaderUrl = buildUrl + "/0.9.2.loader.js";
       const config = {
-        dataUrl: buildUrl + "/0.9.data.unityweb",
-        frameworkUrl: buildUrl + "/0.9.framework.js.unityweb",
-        codeUrl: buildUrl + "/0.9.wasm.unityweb",
+        dataUrl: buildUrl + "/0.9.2.data.unityweb",
+        frameworkUrl: buildUrl + "/0.9.2.framework.js.unityweb",
+        codeUrl: buildUrl + "/0.9.2.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "mettagame",
         productName: "Mori Crossing Bingo",
-        productVersion: "0.9",
+        productVersion: "0.9.2",
       };
 
       const container = document.querySelector("#unity-container");
@@ -58,15 +58,11 @@
         }
         return false;
       }());
-      
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            container.className = "unity-mobile";
 
-            //let pr = window.devicePixelRatio / 2; //this is totally new
-          //still a little laggy with no pixel ratio set.. try 1.5?
-          //config.devicePixelRatio = 1; // pr; //default is 1, but that is too low for most devices/browsers
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
       }
-      
       loadingCover.style.display = "";
 
       const script = document.createElement("script");
