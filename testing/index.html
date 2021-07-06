@@ -15,9 +15,9 @@
     <div id="loading-cover" style="display:none;">
       <div id="unity-loading-bar">
         <div id="unity-logo"><img src="logo.png"></div>
+        Not loading? Try page refresh.
         <div id="unity-progress-bar-empty" style="display: none;">
           <div id="unity-progress-bar-full"></div>
-          Not loading? Try refresh.
         </div>
         <div class="spinner"></div>
       </div>
@@ -26,15 +26,15 @@
     <script>
       const hideFullScreenButton = "";
       const buildUrl = "Build";
-      const loaderUrl = buildUrl + "/0.9.2.loader.js";
+      const loaderUrl = buildUrl + "/0.9.2.1.loader.js";
       const config = {
-        dataUrl: buildUrl + "/0.9.2.data.unityweb",
-        frameworkUrl: buildUrl + "/0.9.2.framework.js.unityweb",
-        codeUrl: buildUrl + "/0.9.2.wasm.unityweb",
+        dataUrl: buildUrl + "/0.9.2.1.data.unityweb",
+        frameworkUrl: buildUrl + "/0.9.2.1.framework.js.unityweb",
+        codeUrl: buildUrl + "/0.9.2.1.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "mettagame",
         productName: "Mori Crossing Bingo",
-        productVersion: "0.9.2",
+        productVersion: "0.9.2.1",
       };
 
       const container = document.querySelector("#unity-container");
