@@ -1,0 +1,130 @@
+@font-face {
+    font-family: pushster;
+    src: url(Pushster-Regular.ttf);
+}
+
+
+body 
+{ 
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+#text{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30pt;
+    align-items: center;
+    justify-content: center;
+}
+
+#text.shadow{
+    text-shadow: -1px 1px 2 black,
+                    1px 1px 2 black,
+                    1px -1px 2 black,
+                    -1px -1px 2 black;
+}
+
+#countdown{
+    color: white;
+    font-family: pushster;
+    font-size: 30pt;
+    align-items: center;
+    justify-content: center;
+
+    -webkit-text-stroke: 4px black;
+
+    background-color: rgb(15, 180, 15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 100px;
+    height: 150px;
+    width: 300px;
+}
+
+#start-button{
+    background: rgb(79, 105, 224);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    width: 110px;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 0px;
+    text-align: center;
+    justify-content:  center;
+    margin-top: 20px;
+    margin-left: 95px;
+    cursor: pointer;
+}
+
+#start-button.red{
+    background: red;
+}
+
+#open-button{
+    background: orange;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    width: 600;
+    font-size: 70px;
+    text-transform: uppercase;
+    padding: 0px;
+    margin-top: 100px;
+    text-align: center;
+    justify-content:  center;
+    cursor: pointer;
+}
+
+#down-button{
+    background: grey;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    width: 40px;
+    height: 30px;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 0px;
+    text-align: center;
+    justify-content:  center;
+    margin-top: 20px;
+    margin-left: 95px;
+    cursor: pointer;
+}
+
+#up-button{
+    display: block;
+    background: grey;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 40px;
+    height: 30px;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 0px;
+    text-align: center;
+    justify-content:  center;
+    margin-top: -30px;
+    margin-left: 165px;
+    cursor: pointer;
+}
+
+#reset-button{
+    background: yellow;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    width: 110px;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 0px;
+    text-align: center;
+    justify-content:  center;
+    margin-top: 20px;
+    margin-left: 95px;
+    cursor: pointer;
+}
