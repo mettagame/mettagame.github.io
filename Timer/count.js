@@ -20,6 +20,7 @@ function Initialize()
 {
     time = startingMinutes * 60;
     paused = true;
+    countdownElement.style.color = "white";
     DisplayTime();
 }
 
