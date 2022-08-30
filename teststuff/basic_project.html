@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+    <head>
+        Basic HTML Project
+    </head>
+
+    <body>
+        <h1>Basic HTML Site</h1>
+        <p>Hello,</p>
+        <p>My name is Chris. Welcome to this super-advanced website from the <em>future!</em></p>
+        
+        <hr>
+
+        <h2>About me</h2>
+        <img src="./logo.png" alt="an image of a face">
+        <br>
+
+        <table>
+            <tr>
+                <th><b>Name</b></th>
+                <th><b>Age</b></th>
+                <th><b>Website</b></th>
+            </tr>
+
+            <tr>
+                <td>Chris</td>
+                <td>Very Old</td>
+                <td><a href="basic_project.html">veryamazingwebsite.com<a></a></td>
+            </tr>
+        </table>
+        
+        <hr>
+
+        <h3>My hobbies</h3>
+        <p>I enjoy fishing for bananas, and long walks on the moon with cheese.</p>
+
+        <h3>A list of my favorite bands:</h3>
+        <ul>
+            <li>Queen</li>
+            <li>King</li>
+            <li>Prince</li>
+        </ul>
+        <p>I love any band or artist that has some relation to the <em>glorious</em> <b>monarchy!</b></p>
+
+        <form>
+            <fieldset>
+                <legend>Enter your info so I can <s>farm your data and steal your money</s> share my journey with you!</legend>
+
+                <br>
+
+                <label>Name:</label>
+                <input type="text" placeholder="Bob Steven">
+
+                <br><br>
+
+                <div>Date of birth:
+                    <label>Day</label>
+                    <input type="number" min="1" max="31" 
+                    minlength="1" maxlength="2" placeholder="11">
+                    <label>Month</label>
+                    <input type="number" min="1" max="12" 
+                    minlength="1" maxlength="2" placeholder="11">
+                    <label>Year</label>
+                    <input type="number" min="1900" max="2100" 
+                    minlength="4" maxlength="4" placeholder="2011">
+                </div>
+
+                <br>
+
+                <div>
+                    <h4>Credit card details:</h4>
+                    <div>
+                        <label>Card number:</label>
+                        <input type="number"
+                        minlength="4" maxlength="4" placeholder="0123">
+                        <input type="number"
+                        minlength="4" maxlength="4" placeholder="4567">
+                        <input type="number"
+                        minlength="4" maxlength="4" placeholder="8999">
+                        <input type="number"
+                        minlength="4" maxlength="4" placeholder="0000">
+                    </div>
+                    <br>
+                    <div>
+                        Expires:
+                        <label>Month</label>
+                        <input type="number" min="1" max="12" 
+                        minlength="1" maxlength="2" placeholder="11">
+                        <label>Year</label>
+                        <input type="number"
+                        minlength="2" maxlength="2" placeholder="11">
+                    </div>
+                    <br>
+                    <div>
+                        <label>CVV Code:</label>
+                        <input type="number"
+                        minlength="3" maxlength="3" placeholder="111">
+                    </div>
+                </div>
+
+                <br>
+
+                <div>
+                    <h4>About you:</h4>
+
+                    <label>email:</label>
+                    <input type="text" placeholder="steven@bobmail.com">
+
+                    <br><br>
+
+                    <label>Your first pet:</label>
+                    <input type="text" placeholder="Spot">
+                    
+                    <br><br>
+
+                    <label>Your favorite teacher:</label>
+                    <input type="text" placeholder="Mr Stevenson">
+
+                    <br><br>
+
+                    <label>Your favorite password:</label>
+                    <input type="password" placeholder="password">
+
+                </div>
+
+                <br><br>
+
+            <input type="submit" value="I agree to the following terms and conditions">
+            </fieldset>
+        </form>
+    </body>
+</html>
