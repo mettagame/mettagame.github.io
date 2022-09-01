@@ -90,10 +90,12 @@ nav ul li {
 }
 
 #copyright {
-    font-size: 0.5em;
-    text-align: right;
     position: fixed;
-    bottom: 10px;
+    text-align: right;
+    font-size: 0.5em;
+    padding: 10px;
+    bottom: 0;
+    right: 0;
 }
 
 a {
