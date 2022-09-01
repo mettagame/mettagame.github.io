@@ -30,10 +30,7 @@ h1#logo {
     padding: 10px 0;
 }
 
-#randomtext {
-    font-size: 0.5em;
-    margin: 150px 0 0 0;
-}
+
 
 input[type="search"] {
     width: 90%;
@@ -90,6 +87,13 @@ nav#footer {
 nav ul li {
     display: inline-block; /*display the nav unordered list items inline*/
     padding: 0 10px;
+}
+
+#copyright {
+    font-size: 0.5em;
+    text-align: right;
+    position: fixed;
+    bottom: 10px;
 }
 
 a {
