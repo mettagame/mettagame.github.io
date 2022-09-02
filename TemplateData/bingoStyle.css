@@ -10,12 +10,14 @@ html, body {
 canvas {
     display: block;
 }
+/*
 body {
     margin: 0;
 }
-
-body#bodyContainer {
-    max-width: fit-content;
+*/
+#layoutContainer {
+    max-width: 1024px;
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -29,7 +31,7 @@ body#bodyContainer {
     background: #828080;
 }
 #loading-cover {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -39,7 +41,7 @@ body#bodyContainer {
     align-items: center;
 }
 #unity-loading-bar {
-    flex: 1 1 auto;
+    /*flex: 1 1 auto; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -107,4 +109,81 @@ body#bodyContainer {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* nav formatting */
+
+nav#header {
+    text-align: right;
+    padding: 10px 0;
+}
+
+nav#footer {
+    background: #e4e4e4;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline-block; /*display the nav unordered list items inline*/
+    padding: 0 10px;
+}
+
+#copyright {
+    position: fixed;
+    text-align: right;
+    font-size: 0.5em;
+    padding: 10px;
+    bottom: 0;
+    right: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#ribbonHeader {
+    /*background: #e4e4e4;*/
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    padding: 10px 0;
+    text-align: left;
+}
+
+#ribbonHeader nav ul {
+    float: left;
+    padding: 10px 0;
+}
+
+#ribbonHeader ul#floatRight {
+    float: right;
+    text-align: right;
+    padding: 0 0;
+    /*line-height: 70px;*/
+}
+
+#compactLogo {
+    width: 50px;
+    height:35px;
+    background: url(chris/media/compactLogo.svg) bottom left no-repeat;
+    background-size: 100%;
+    margin: 0 20px;
+    transition: all linear 0.1s;
+    font-size: 0px;
+}
+
+#compactLogo:hover {
+    height: 35px;
+    width: 250px;
+    background: url(chris/media/csLogo.svg) bottom left no-repeat;
+    background-size: 100%;
+    margin: 0 20px;
+}
+
+a#currentPage {
+    color:aliceblue;
 }
