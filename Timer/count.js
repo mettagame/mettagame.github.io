@@ -1,6 +1,7 @@
 var startingMinutes = 10;
 let time = startingMinutes * 60;
 var paused = true;
+var countActive = false;
 
 const countdownElement = document.getElementById('countdown');
 const startButton = document.getElementById("start-button");
@@ -20,6 +21,7 @@ function Initialize()
 {
     time = startingMinutes * 60;
     paused = true;
+    countActive = false;
     countdownElement.style.color = "white";
     DisplayTime();
 }
@@ -59,6 +61,7 @@ function TimeUp()
 
 function StartPause()
 {
+    countActive = true;
     paused = !paused;
     if (paused)
     {
@@ -74,6 +77,7 @@ function StartPause()
 
 function ResetButton()
 {
+    countActive = false;
     Initialize();
     startButton.className = "";
     startButton.innerHTML = "start";
@@ -81,7 +85,7 @@ function ResetButton()
 
 function AddMinute()
 {
-    if(paused)
+    if(paused && !countActive)
     {
         if (startingMinutes <60)
         {
@@ -93,7 +97,7 @@ function AddMinute()
 
 function RemoveMinute()
 {
-    if(paused)
+    if(paused && !countActive)
     {
         if (startingMinutes > 1){
             startingMinutes--;  
