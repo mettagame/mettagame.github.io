@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=300, height=400, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Countdown by mettagame</title>
+    <link rel="stylesheet" href="timerStyle.css">
+  </head>
+
+<body>
+    <p id="countdown">10:00</p>
+    
+    <button id="start-button" onclick="StartButton()" >start</button>
+    <button id="down-button" onclick="RemoveMinute()">-</button>
+    <button id="up-button" onclick="AddMinute()">+</button>
+    <button id="reset-button" onclick="ResetButton()">reset</button>
+
+    <!-- scripts -->
+    <script src="count.js"></script>
+    <!-- /scripts -->
+
+</body>
+
+</html>

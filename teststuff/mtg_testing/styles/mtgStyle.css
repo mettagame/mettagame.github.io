@@ -76,3 +76,8 @@ h1#logo {
     background: url(../data/moriLogo.png) center no-repeat;
     background-size: 100%;
 }
+
+#timer {
+    background: url(../data/hourglass.svg) center no-repeat;
+    background-size: 60%;
+}

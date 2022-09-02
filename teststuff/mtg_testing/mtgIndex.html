@@ -2,8 +2,7 @@
 <html>
     <head>
         <title>mettagame</title>
-        <link rel="stylesheet" type="text/css" href="styles/mtgStyle.css">
-        
+        <link rel="stylesheet" type="text/css" href="styles/mtgStyle.css">        
     </head>
 
     <body>
@@ -31,23 +30,32 @@
                         <a href="bingo.html"><h2 class="imgBox" id="moriBingo">Mori Bingo</h2></a>
                     </li>
                     <li>
-                        <a href=""><h2 class="imgBox" id="timer">Timer</h2></a>
+                        <a href="" id="open-button" onclick="Open()"><h2 class="imgBox" id="timer">Timer</h2></a>
                     </li>
-                    <li>
+                    <!--li>
                         <a href=""><h2 class="imgBox" id="other1">other thing</h2></a>
                     </li>
                     <li>
                         <a href=""><h2 class="imgBox" id="otherB">other other thing</h2></a>
-                    </li>
+                    </li-->
                 </ul>
             </nav>
         </div>
         
+
         <footer>
             <p id="copyright">
                 &copy; 2022 mettagame
             </p>
         </footer>
+
+        <!-- timer js -->
+        <script>
+            function Open()
+            {
+                window.open(href = "data/timer/popoutTimer.html", "name", "height=340, width=300");
+            }
+        </script>
         
     </body>
 
