@@ -87,7 +87,7 @@ function AddMinute()
 {
     if(paused && !countActive)
     {
-        if (startingMinutes <60)
+        if (startingMinutes <120)
         {
             startingMinutes++;
             Initialize();
