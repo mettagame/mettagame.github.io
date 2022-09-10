@@ -95,6 +95,19 @@ function AddMinute()
     }
 }
 
+function AddTen()
+{
+    if(paused && !countActive)
+    {
+        if (startingMinutes <120)
+        {
+            startingMinutes+=10;
+            if (startingMinutes > 120) startingMinutes = 120;
+            Initialize();
+        }
+    }
+}
+
 function RemoveMinute()
 {
     if(paused && !countActive)
@@ -105,3 +118,16 @@ function RemoveMinute()
         }
     }
 }
+
+function RemoveTen()
+{
+    if(paused && !countActive)
+    {
+        if (startingMinutes > 10){
+            startingMinutes-=10;
+            if (startingMinutes < 1) startingMinutes = 1; 
+            Initialize();     
+        }
+    }
+}
+
