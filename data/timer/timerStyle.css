@@ -119,3 +119,7 @@ body
 #start-button.red{
     background: red;
 }
+
+#reset-button.yellow{
+    background: yellow;
+}

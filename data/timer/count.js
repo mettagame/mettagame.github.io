@@ -16,7 +16,7 @@ const resetButton = document.getElementById("reset-button");
 
 startButton.addEventListener('click', StartPause);
 
-downButton.addEventListener('click', MinusTen);
+downButton.addEventListener('click', function(){Increment(-30)}, false); //this works?
 dblDownButton.addEventListener('click', MinusSixty);
 
 upButton.addEventListener('click', AddTen);
@@ -50,11 +50,15 @@ function Countdown()
     DisplayTime();
     time--;
     
-    if (time <= 30)
+    if (time <= 60)
     {
-        if (time <=0)
+        if (time <=10)
         {
-            TimeUp();
+            if (time <= 0)
+            {
+                TimeUp();
+            }
+            else {TimeVeryLow();}
         }
         else {TimeLow()};
     }   
@@ -77,9 +81,11 @@ function DisplayTime()
         mins = "0" + mins;
     }
 
-    secs = secs < 10 ? "0" + secs : secs; //same for seconds under 10 at all times
-    
-    
+    if (time > 11)
+    {
+        secs = secs < 10 ? "0" + secs : secs; //same for seconds under 10 except last
+    }
+   
     if (hours > 0) //only display hours if relevant
     {
         countdownElement.innerHTML = `${hours}:${mins}:${secs}`;
@@ -95,15 +101,18 @@ function DisplayTime()
         countdownElement.innerHTML = `${secs}`;
         countdownElement.className = "seconds";
    
-    }
-    
-    
+    }  
 }
 
 function TimeUp()
 {
     time = 0;
     running = false;
+    //countdownElement.style.color = "grey";
+}
+
+function TimeVeryLow()
+{
     countdownElement.style.color = "red";
 }
 
@@ -120,16 +129,19 @@ function StartPause()
     {
         startButton.className = "";
         startButton.innerHTML = "start";
+        resetButton.className = "yellow";
     }
     else
     {
         startButton.className = "red";
         startButton.innerHTML = "stop";
+        resetButton.className = "";
     }
 }
 
 function ResetButton()
 {
+    if(!paused){return;}
     countActive = false;
     Initialize();
     startButton.className = "";
