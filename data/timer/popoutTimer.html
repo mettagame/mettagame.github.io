@@ -10,12 +10,21 @@
   </head>
 
 <body>
-    <p id="countdown">10:00</p>
-    
-    <button id="start-button" onclick="StartButton()" >start</button>
-    <button id="down-button" onclick="RemoveMinute()">-</button>
-    <button id="up-button" onclick="AddMinute()">+</button>
-    <button id="reset-button" onclick="ResetButton()">reset</button>
+    <p id="countdown"></p>
+
+    <div id="button-container">
+      <button id="start-button"">start</button>
+      <div class="button-row">
+
+        <button id="down-down-button">--</button>
+        <button id="down-button">-</button>
+
+        <button id="up-button">+</button>
+        <button id="up-up-button">++</button>
+
+      </div>
+      <button id="reset-button">reset</button>
+    </div>
 
     <!-- scripts -->
     <script src="count.js"></script>
