@@ -58,6 +58,9 @@ body
     */
 }
 
+#countdown.doubleDigitHours{
+    font-size: 64px;
+}
 #countdown.hours{
     font-size: 73px;
 }
