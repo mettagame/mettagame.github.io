@@ -5,6 +5,8 @@
     font-size: 18px;
     font-weight: normal;
     list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
 body {
@@ -12,56 +14,87 @@ body {
     background: white;
 }
 
-/* sticky header */
-header nav { 
-    background: #d8d8d8;
-    margin-top: 0px;
+header {
+    background: #f1f1f1;
     width: 100%;
-    height: 60px;
+}
+
+#flexHeader {
+    width: 96%;
+    margin: auto;
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
+    text-align: center;
 }
 
-header nav h1 , header nav .tabs {
-    border: 1px solid black;
-    height: 100%;
-}
-
-header nav h1 {
-    margin-left: 10%;
-    font-size: 0; 
-    height: 60px;
-    width: 85px;
-    background: url(../media/compactLogo.svg) bottom left no-repeat;
+#headerLogo {
+    display: flex;
+    border: 2px solid orange;
+    font-size: 0px;
+    background: url(../media/compactLogo.svg) center no-repeat;
+    width: 70px;
     background-size: 100%;
 }
 
-header nav .tabs {
-    margin-right: 10%;
-    list-style-type: none;
+#headerLogo:hover {
+    background: url(../media/csLogo.svg) center no-repeat;
+    width: 300px;
+    background-size: 100%;
+}
+
+#flexHeader #linksBox {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: row;
+    border: 2px solid red;
     gap: 10px;
 }
 
-header nav .tabs li {
-    display: block;
-    border: 1px solid pink;
-    height: 90%;
-    align-items: center;
-    justify-items: center;
+#flexHeader a {
+    height: 60px;
+    min-width: 150px;
+    line-height: 60px;
+    font-size: 1.5em;
+    box-sizing: border-box;
+    border: 2px solid black;
 }
 
-/*
-header nav .tabs li {
-padding: 10px 20px;
-}*/
+@media screen and (max-width: 800px){
+    #flexHeader {
+        margin-left: 2%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    }
 
-/*
-header nav h1, header nav #tabs {
-    display : inline-block;
-    margin-left: 10%;
+    #flexHeader #linksBox {
+        flex-direction: column;
+        flex-flow: column;
+        border-color: greenyellow;
+        gap: 1px;
+        justify-content: left;
+        align-items: left;
+        width: 100%;
+    }
 
-}*/
+    #flexHeader a {
+        width: 100%;
+    }
+
+    #flexHeader #linksBox a {
+        line-height: 50px;
+        font-size: 1.5em;
+        padding-left: 5%;
+    }
+
+    #flexHeader #headerLogo {
+        background: url(../media/csLogo.svg) center no-repeat;
+        width: 300px;
+        background-size: 100%;
+
+    }
+
+}
+

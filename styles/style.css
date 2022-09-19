@@ -1,0 +1,102 @@
+* { /* global default styles */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background: #fffce5;
+}
+
+h1#logo {
+    width: 400px;
+    height: 75px;
+    background: url(../data/mettaLogo.svg) top left no-repeat;
+    background-size: 100%;
+    font-size: 0px;
+    margin: 0 auto;
+}
+
+#container, #linksContainer {
+    max-width: 800px;
+    height: 100%;
+    margin: 10% auto;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#copyright {
+    position: fixed;
+    /*text-align: right;*/
+    font-size: 0.5em;
+    padding: 10px;
+    bottom: 0;
+    right: 0;
+}
+
+#linksContainer {
+    max-width: 1200px;
+}
+
+/*
+#linksContainer {
+    margin: 100px 0;
+    padding: 10px;
+}
+*/
+
+#linksContainer #flexLinks {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#flexLinks li {
+    min-width: 300px;
+}
+
+/*
+#linksContainer nav ul li {
+    display: inline-block;
+}*/
+
+#linksContainer li .imgBox {
+    display: inline-block;
+    border: 4px solid black;
+    border-radius: 5px;
+    width: 300px;
+    height: 250px;
+    margin: 20px;
+}
+
+#linksContainer h2 { font-size: 0px;} /*hide link text*/
+
+#moriBingo {
+    background: url(../data/moriLogo.png) center no-repeat;
+    background-size: 100%;
+}
+
+#timer {
+    background: url(../data/hourglass.svg) center no-repeat;
+    background-size: 60%;
+}
+
+@media screen and (max-width: 800px) {
+    #linksContainer #flexLinks {
+        flex-direction: column;
+    }
+    
+}
+
+/* navbar */

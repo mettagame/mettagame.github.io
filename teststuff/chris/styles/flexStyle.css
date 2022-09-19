@@ -77,24 +77,34 @@ h1#logo {
     padding: 5px 5px 5px 50px;
 }
 
+#copyright-footer {
+    position: fixed;
+    /*text-align: right;*/
+    font-size: 0.5em;
+    padding: 10px;
+    bottom: 0;
+    right: 0;
+}
+
 /*
 **  flex-header
 */
 
 #flex-header {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background-color: #f1f1f1;
-    height: 70px;
+    height: 60px;
     text-align: center;
 }
 
 #flex-header > #flex-logo {
     display: flex;
-    height: 60px;
-    width: 85px;
+    height: 50px;
+    width: 70px;
     justify-content: flex-start;
     margin-left: 5%;
     background: url(../media/compactLogo.svg) center no-repeat;
@@ -115,15 +125,14 @@ h1#logo {
 }
 
 #flex-tabs > li {
-
     width: 100px;
-    height: 60px;
+    height: 50px;
     background-color: white;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
 }
 
 #flex-tabs > li > a {
-    line-height: 60px;
+    line-height: 50px;
     color: #0085FF;
     font-size: 22px;
 }
@@ -136,12 +145,35 @@ h1#logo {
     color: aliceblue;
 }
 
-#flex-tabs > li:hover {
-    border-color: black;
+#flex-header > #flex-tabs > li:hover {
+    background-color: aliceblue;
 }
 
 #flex-header > #flex-logo:hover {
-    width: 480px;
+    width: 340px;
     background: url(../media/csLogo.svg) center no-repeat;
     background-size: 100%;
+}
+
+#flex-header > #flex-tabs > li#active {
+    background-color: dodgerblue;
+}
+#flex-header > #flex-tabs > li#active > a {
+    color: white;
+}
+
+@media screen and (max-width: 800px) {
+    #flex-header {
+        flex-direction: column;
+        text-align: left;        
+    }
+    #flex-logo , flex-tabs {
+        flex-direction: column;
+        display: block;
+        width: 100%;
+        height: 60px;
+        gap: 10px;
+    }
+
+
 }
