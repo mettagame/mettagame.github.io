@@ -18,10 +18,11 @@ body {
 h1#logo {
     width: 400px;
     height: 75px;
-    background: url(../data/mettaLogo.svg) top left no-repeat;
+    background: url(../data/mettaLogo.svg) center no-repeat;
     background-size: 100%;
     font-size: 0px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 #container, #linksContainer {
@@ -95,6 +96,10 @@ h1#logo {
 @media screen and (max-width: 800px) {
     #linksContainer #flexLinks {
         flex-direction: column;
+    }
+
+    h1#logo {
+        width: 340px;
     }
     
 }
