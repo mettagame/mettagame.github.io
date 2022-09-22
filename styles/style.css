@@ -63,9 +63,10 @@ h1#logo {
     gap: 30px;
 }
 
+/*
 #flexLinks li {
     min-width: 300px;
-}
+}*/
 
 /*
 #linksContainer nav ul li {
@@ -98,8 +99,13 @@ h1#logo {
         flex-direction: column;
     }
 
+    
+    #linksContainer li .imgBox{
+        margin: 20px auto;
+    }
+
     h1#logo {
-        width: 340px;
+        width: 320px;
     }
     
 }
