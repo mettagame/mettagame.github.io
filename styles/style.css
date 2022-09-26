@@ -1,10 +1,12 @@
 * { /* global default styles */
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Play', Arial, Helvetica, sans-serif;
     font-size: 18px;
     font-weight: normal;
     list-style: none;
+    box-sizing: border-box;
+    color: #303030;
 }
 
 a {
@@ -13,6 +15,47 @@ a {
 
 body {
     background: #fffce5;
+}
+
+/* navbar */
+#navBackground {
+    width: 100%;
+    background: #303030;
+}
+
+#navBar {
+    display: flex;
+    flex-direction: row;
+    margin: 0 5%;
+    width: 90%;
+    /*height: 50px;*/
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#navBar a {
+    line-height: 50px;
+    font-size: 1.5em;
+    /*width: 100px;
+    margin: 2px;
+    text-align: center;
+    border: 1px solid #fffce5;*/
+
+    color: #fffce5;
+}
+
+#navBar a:hover {
+    color: orange;
+}
+
+h1{
+    font-size: 2em;
+    color: grey;
+}
+
+h2{
+    font-size: 1.5em;
+    color: grey;
 }
 
 h1#logo {
@@ -25,12 +68,81 @@ h1#logo {
     overflow: hidden;
 }
 
-#container, #linksContainer {
+.container, #linksContainer {
     max-width: 800px;
     height: 100%;
-    margin: 10% auto;
+    margin: 5% auto;
     text-align: center;
     padding: 10px 0;
+}
+
+#linksContainer {
+    max-width: 1200px;
+}
+
+form {
+    text-align: left;
+    margin: 5% 10% 0;
+    color: grey;
+    font-size: 2em;
+}
+
+form ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /*border: 4px solid pink;*/
+}
+
+form ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /*border: 2px solid green;*/
+}
+
+form ul li h2 {
+    min-width: 100px;
+}
+
+form ul li input {
+    width: 100%;
+    padding: 2px 10px;
+}
+
+form ul li input, #messageInput {
+    border: 2px solid #303030;
+    border-radius: 0;   
+}
+
+#emailInput, #nameInput {
+    line-height: 2em;
+}
+
+form #messageInput {
+    margin: 0 10%;
+    padding: 5px 10px;
+    text-align: left;
+    width: 100%;
+    resize: none;
+    overflow: none;
+    word-break: keep-all;
+    word-wrap: normal;
+}
+
+form #submitButton {
+    width: 200px;
+    margin: 0px auto;
+    padding: 2px 10px;
+    background-color: #303030;
+    color: #fffce5;
+    font-size: 2em;
+}
+
+form #submitButton:hover {
+    color: orange;
 }
 
 #copyright {
@@ -42,17 +154,6 @@ h1#logo {
     right: 0;
 }
 
-#linksContainer {
-    max-width: 1200px;
-}
-
-/*
-#linksContainer {
-    margin: 100px 0;
-    padding: 10px;
-}
-*/
-
 #linksContainer #flexLinks {
     display: flex;
     width: 100%;
@@ -62,16 +163,6 @@ h1#logo {
     align-items: center;
     gap: 30px;
 }
-
-/*
-#flexLinks li {
-    min-width: 300px;
-}*/
-
-/*
-#linksContainer nav ul li {
-    display: inline-block;
-}*/
 
 #linksContainer li .imgBox {
     display: inline-block;
@@ -84,6 +175,7 @@ h1#logo {
 
 #linksContainer h2 { font-size: 0px;} /*hide link text*/
 
+/* links info */
 #moriBingo {
     background: url(../data/moriLogo.png) center no-repeat;
     background-size: 100%;
@@ -94,20 +186,44 @@ h1#logo {
     background-size: 60%;
 }
 
+/* responsive elements */
 @media screen and (max-width: 800px) {
+    h1#logo {
+        width: 320px;
+    }
+
     #linksContainer #flexLinks {
         flex-direction: column;
     }
-
     
     #linksContainer li .imgBox{
         margin: 20px auto;
     }
 
-    h1#logo {
-        width: 320px;
+    form ul li {
+        flex-direction: column;
+        gap: 2px;
     }
-    
+
+    form #messageInput {
+        margin: 0;
+        text-align: left;
+        width: 100%;
+        resize: none;
+        overflow: none;
+        word-break: keep-all;
+        word-wrap: normal;
+        height: 200px;
+    }
 }
 
-/* navbar */
+/*galaxy fold fix*/
+@media screen and (max-width: 280px) {
+    h1#logo {
+        width: 250px;
+    }
+
+    form #messageInput {
+        height: 250px;
+    }
+}

@@ -14,22 +14,33 @@ const dblUpButton = document.getElementById("up-up-button");
 
 const resetButton = document.getElementById("reset-button");
 
+const hoursInput = document.getElementById("hours-input");
+const minsInput = document.getElementById("mins-input");
+const secsInput = document.getElementById("secs-input");
+
+const enterButton = document.getElementById("set-time-button");
+const buttonRow = document.getElementById("button-row");
+const hideContainer = document.getElementById("hider-container");
+
 startButton.addEventListener('click', StartPause);
 
-downButton.addEventListener('click', function(){Increment(-30)}, false); //this works?
-dblDownButton.addEventListener('click', function(){Increment(-600)}, false);
-dblDownButton.addEventListener("contextmenu", function(){Increment(-3600)}, false); //right click for 1 hour
+downButton.addEventListener('click', function(){Increment(-1)}, false); //this works?
+dblDownButton.addEventListener('click', function(){Increment(-10)}, false);
+dblDownButton.addEventListener("contextmenu", function(){Increment(-60)}, false); //right click for 1 hour
 
-upButton.addEventListener('click', function(){Increment(30)}, false);
-dblUpButton.addEventListener('click', function(){Increment(600)}, false);
-dblUpButton.addEventListener("contextmenu", function(){Increment(3600);}, false);
+upButton.addEventListener('click', function(){Increment(1)}, false);
+dblUpButton.addEventListener('click', function(){Increment(10)}, false);
+dblUpButton.addEventListener("contextmenu", function(){Increment(60);}, false); //was 30s 10m, 1h
 
 resetButton.addEventListener('click', ResetButton);
+
+enterButton.addEventListener("click", SetNewTime, false);
 
 document.addEventListener("DOMContentLoaded", Initialize); //run init on first load
 
 function Initialize()
 {
+    console.log("initialize");
     time = startingSeconds;
     countActive = false;
     resetButton.className = "";
@@ -137,6 +148,9 @@ function StartPause()
         startButton.className = "red";
         startButton.innerHTML = "stop";
         resetButton.className = "";
+        //add/remove with classList as classes used for layout also
+        buttonRow.classList.remove("canTweak");
+        hideContainer.classList.add("hidden");
     }
     else
     {
@@ -144,6 +158,8 @@ function StartPause()
         startButton.className = "";
         startButton.innerHTML = "start";
         resetButton.className = "yellow";
+        buttonRow.classList.add("canTweak");
+        hideContainer.classList.remove("hidden");
     }
 }
 
@@ -155,16 +171,65 @@ function ResetButton()
     startButton.innerHTML = "start";
 }
 
-function Increment(value)
+function Increment(value) //how to incrememnt starting time
 {
-    if(countActive || time != startingSeconds) return;
-    startingSeconds+=value;
+    if(countActive) return; //removed || time != startingSeconds by request.. but not right effect.. yet
+    //startingSeconds+=value;
+    time += value;
     ValidateTime();
-    Initialize();  
+    DisplayTime();
+    //Initialize();
 }
 
 function ValidateTime()
 {
     startingSeconds = startingSeconds <=0 ? 0 : startingSeconds;
     startingSeconds = startingSeconds >= maxTime ? maxTime : startingSeconds;
+}
+
+function SetNewTime()
+{
+    if (countActive) return;
+    let newStartTime = CheckInputs(hoursInput, true) * 60 * 60 + CheckInputs(minsInput) * 60 + CheckInputs(secsInput);
+    if (newStartTime == 0) return;
+    startingSeconds = newStartTime;
+    ValidateTime();
+    Initialize();
+}
+
+function CheckInputs(input, isHours = false)
+{
+    let checkMe = input.value;
+    //checkMe = checkMe.replace(/\b(0(?!\b))+/g, "");
+    checkMe = parseInt(checkMe, 10);
+    //checkMe = checkMe * 1;
+    //console.log("input = ", {value: checkMe});
+
+    //validate input is number
+    if (isNaN(checkMe)) 
+    {
+        //console.log("input is NaN!! - ", {value: checkMe});
+        checkMe = 0;
+        return input.value = checkMe;
+    }
+    //else console.log("input is valid: ", {value: checkMe});
+
+    //validate is within expected bounds
+    if (checkMe < 0) 
+    {
+        checkMe = 0;
+        return input.value = checkMe;
+    }
+
+    else if (checkMe > 24 && isHours) 
+    {
+        checkMe = 24;
+        return input.value = checkMe;
+    }
+    else if (checkMe > 59)
+    {
+        checkMe = 59;
+        return input.value = checkMe;
+    }
+    else return input.value = checkMe;
 }

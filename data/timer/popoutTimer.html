@@ -2,28 +2,62 @@
 <html lang="en">
 
   <head>
+    <title>countdown by mettagame</title>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=300, height=400, initial-scale=1.0">
+    <meta name="viewport" content="width=300, height=500, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Countdown by mettagame</title>
+        
     <link rel="stylesheet" href="timerStyle.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
   </head>
 
 <body>
     <p id="countdown"></p>
 
-    <div id="button-container">
-      <button id="start-button"">start</button>
-      <div class="button-row">
+    <div class="flex-column" id="button-container">
+      <button id="start-button" class="black-button">start</button>
+      <div class="flex-column" id="hider-container">
 
-        <button id="down-down-button">--</button>
-        <button id="down-button">-</button>
+        <h2>live tweak:</h2>
 
-        <button id="up-button">+</button>
-        <button id="up-up-button">++</button>
+        <div class="flex-row" id="button-row">
+  
+          <button id="down-down-button">-10</button>
+          <button id="down-button">-1</button>
+  
+          <button id="up-button">+1</button>
+          <button id="up-up-button">+10</button>
+        </div>
+
+        <button id="reset-button">reset</button>
+
+        <div class="flex-column" id="custom-time-box">
+          <div class="flex-row" id="timeInput">
+            <input type="number" id="hours-input" placeholder="h" default="0" max="24" min="0" size="2">
+            <input type="number" id="mins-input" placeholder="m" default="10" max="59" min="0" size="2">
+            <input type="number" id="secs-input" placeholder="s" default="0" max="59" min="0" size="2">
+          </div>
+          <button id="set-time-button">set time</button>
+        </div>
 
       </div>
-      <button id="reset-button">reset</button>
+      
+      <!--button id="reset-button">reset</button-->
+
+      <!--div id="custom-time-box">
+        <div id="timeInput">
+          <input type="number" id="hours-input" placeholder="h" default="0" max="24" min="0" size="2">
+          <input type="number" id="mins-input" placeholder="m" default="10" max="59" min="0" size="2">
+          <input type="number" id="secs-input" placeholder="s" default="0" max="59" min="0" size="2">
+        </div>
+        <button id="enter-button">set time</button>
+      </div-->
+      
     </div>
 
     <!-- scripts -->
