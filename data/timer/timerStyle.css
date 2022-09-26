@@ -162,3 +162,10 @@ h2 {
     height: 0px;
 }
 
+/* >> responsive on mobile << */
+@media screen and (max-width: 800px) {
+    #mobile-container {
+        width: 300px;
+        margin: 0 auto;
+    }
+}

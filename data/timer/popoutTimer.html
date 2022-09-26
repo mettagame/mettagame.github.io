@@ -5,6 +5,7 @@
     <title>countdown by mettagame</title>
 
     <meta charset="UTF-8">
+    <!-- fixed size popout on desktop, for streamer capture-->
     <meta name="viewport" content="width=300, height=500, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
@@ -17,10 +18,11 @@
   </head>
 
 <body>
+  <div id="mobile-container">
     <p id="countdown"></p>
 
     <div class="flex-column" id="button-container">
-      <button id="start-button" class="black-button">start</button>
+      <button id="start-button">start</button>
       <div class="flex-column" id="hider-container">
 
         <h2>live tweak:</h2>
@@ -47,23 +49,12 @@
 
       </div>
       
-      <!--button id="reset-button">reset</button-->
-
-      <!--div id="custom-time-box">
-        <div id="timeInput">
-          <input type="number" id="hours-input" placeholder="h" default="0" max="24" min="0" size="2">
-          <input type="number" id="mins-input" placeholder="m" default="10" max="59" min="0" size="2">
-          <input type="number" id="secs-input" placeholder="s" default="0" max="59" min="0" size="2">
-        </div>
-        <button id="enter-button">set time</button>
-      </div-->
-      
     </div>
 
     <!-- scripts -->
     <script src="count24.js"></script>
     <!-- /scripts -->
-
+  </div>
 </body>
 
 </html>
