@@ -154,26 +154,32 @@ form #submitButton:hover {
     right: 0;
 }
 
-#linksContainer #flexLinks {
+#linksContainer #flexLinks { /*handles flex links formatting here*/
     display: flex;
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 #linksContainer li .imgBox {
     display: inline-block;
+    display: block;
     border: 4px solid black;
     border-radius: 5px;
     width: 300px;
     height: 250px;
-    margin: 20px;
+    /*font-size: 150%; /* <--uncomment to make text visible*/
 }
 
-#linksContainer h2 { font-size: 0px;} /*hide link text*/
+#linksContainer li p {
+    font-size: 120%;
+    color: #303030;
+}
+
+#linksContainer h2 { font-size: 0px;} /*hide link description text*/
 
 /* links info */
 #moriBingo {
