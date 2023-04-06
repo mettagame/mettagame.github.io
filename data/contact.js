@@ -6,12 +6,13 @@ document.addEventListener("DOMContentLoaded", HelloWorld); //run hw on first loa
 
 function HelloWorld()
 {
-    console.log("hello world");
+    console.log("Greetings, this page is not yet fully implemented!");
+    console.log("There is no active php backend.")
 }
 
 function SubmitForm(e) //why e what is this for why is nobody ever explicit?!
 {
-    console.log("I pressed submit!");
+    console.log("You pressed submit!");
 
     e.preventDefault(); //what is this?!?!
     
